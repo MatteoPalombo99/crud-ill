@@ -25,18 +25,28 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
 
     @Override
     public void entraStatoRicerca() {
-        jTextFieldCodice.setEnabled(true);
-        jTextFieldDescrizione.setEnabled(true);
-        jButtonModifica.setEnabled(true);
-        jButtonConferma.setEnabled(true);
-        jButtonAnnulla.setEnabled(true);
-        jButtonRimuovi.setEnabled(true);
-
+        jTextFieldCodice.setVisible(false);
+        jTextFieldDescrizione.setVisible(false);
+        jButtonModifica.setVisible(false);
+        jButtonConferma.setVisible(false);
+        jButtonAnnulla.setVisible(false);
+        jButtonRimuovi.setVisible(false);
+        jButtonNuova.setVisible(true);
+        jButtonCerca.setVisible(true);
     }
 
     @Override
     public void entraStatoAggiungi() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jTextFieldCodice.setVisible(true);
+        jTextFieldDescrizione.setVisible(true);
+        jButtonModifica.setVisible(false);
+        jButtonConferma.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonRimuovi.setVisible(false);
+        jButtonCerca.setVisible(false);
+        jButtonNuova.setVisible(false);
+        jTableTabella.setVisible(false);
+
     }
 
     @Override

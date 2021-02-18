@@ -17,6 +17,10 @@ public class AutomaCrud implements State {
 
     private class Ricerca implements State {
 
+        public Ricerca() {
+            ui.entraStatoRicerca();
+        }
+
         @Override
         public void next(Event e) {
             if (e instanceof RicercaEvent) {
@@ -31,6 +35,10 @@ public class AutomaCrud implements State {
     }
 
     private class Aggiungi implements State {
+
+        public Aggiungi() {
+            ui.entraStatoAggiungi();
+        }
 
         @Override
         public void next(Event e) {
