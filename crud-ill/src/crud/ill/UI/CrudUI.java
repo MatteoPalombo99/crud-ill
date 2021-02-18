@@ -20,9 +20,9 @@ import crud.ill.SelezionaEvent;
  * @author Hp
  */
 public class CrudUI extends javax.swing.JFrame implements Automabile {
-    
+
     AutomaCrud automa;
-    
+
     @Override
     public void entraStatoRicerca() {
         jTextFieldCodice.setVisible(false);
@@ -34,7 +34,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonNuova.setVisible(true);
         jButtonCerca.setVisible(true);
     }
-    
+
     @Override
     public void entraStatoAggiungi() {
         jTextFieldCodice.setVisible(true);
@@ -48,7 +48,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jTableTabella.setVisible(false);
         jTextFieldCercaPerCodice.setVisible(false);
     }
-    
+
     @Override
     public void entraStatoVisualizza() {
         jButtonNuova.setVisible(true);
@@ -64,15 +64,35 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jTableTabella.setVisible(true);
         jButtonRimuovi.setVisible(true);
     }
-    
+
     @Override
     public void entraStatoModifica() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jTextFieldCodice.setVisible(true);
+        jTextFieldDescrizione.setVisible(true);
+        jButtonModifica.setVisible(false);
+        jButtonConferma.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonRimuovi.setVisible(false);
+        jButtonCerca.setVisible(false);
+        jButtonNuova.setVisible(false);
+        jTextFieldCercaPerCodice.setVisible(false);
     }
-    
+
     @Override
     public void entraStatoRimuovi() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jTextFieldCodice.setVisible(true);
+        jTextFieldCodice.setEditable(false);
+        jTextFieldDescrizione.setVisible(true);
+        jTextFieldDescrizione.setEditable(true);
+        jButtonModifica.setVisible(false);
+        jButtonConferma.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonRimuovi.setVisible(false);
+        jButtonCerca.setVisible(false);
+        jButtonNuova.setVisible(false);
+        jTextFieldCercaPerCodice.setVisible(false);
+        jTextFieldCodice.setVisible(true);
+
     }
 
     /**

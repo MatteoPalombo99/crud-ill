@@ -77,6 +77,10 @@ public class AutomaCrud implements State {
 
     private class Modifica implements State {
 
+        public Modifica() {
+            ui.entraStatoModifica();
+        }
+        
         @Override
         public void next(Event e) {
             if (e instanceof AnnullaEvent) {
@@ -91,6 +95,10 @@ public class AutomaCrud implements State {
 
     private class Rimuovi implements State {
 
+        public Rimuovi() {
+            ui.entraStatoRimuovi();
+        }
+        
         @Override
         public void next(Event e) {
             if (e instanceof AnnullaEvent) {
