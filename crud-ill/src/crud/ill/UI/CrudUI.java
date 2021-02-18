@@ -5,9 +5,15 @@
  */
 package crud.ill.UI;
 
+import crud.ill.AddEvent;
+import crud.ill.AnnullaEvent;
 import crud.ill.AutomaCrud;
 import crud.ill.Automabile;
+import crud.ill.ConfermaEvent;
 import crud.ill.ModificaEvent;
+import crud.ill.RicercaEvent;
+import crud.ill.RimuoviEvent;
+import crud.ill.SelezionaEvent;
 
 /**
  *
@@ -25,7 +31,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonConferma.setEnabled(true);
         jButtonAnnulla.setEnabled(true);
         jButtonRimuovi.setEnabled(true);
-        
+
     }
 
     @Override
@@ -92,14 +98,34 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         });
 
         jButtonConferma.setText("Conferma");
+        jButtonConferma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfermaActionPerformed(evt);
+            }
+        });
 
         jButtonAnnulla.setText("Annulla");
+        jButtonAnnulla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAnnullaActionPerformed(evt);
+            }
+        });
 
         jButtonRimuovi.setText("Rimuovi");
+        jButtonRimuovi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRimuoviActionPerformed(evt);
+            }
+        });
 
         jTextFieldCercaPerCodice.setText("Cerca per codice");
 
         jButtonCerca.setText("Cerca");
+        jButtonCerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCercaActionPerformed(evt);
+            }
+        });
 
         jTableTabella.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,8 +141,18 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jScrollPane1.setViewportView(jTableTabella);
 
         jButtonNuova.setText("Nuova");
+        jButtonNuova.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNuovaActionPerformed(evt);
+            }
+        });
 
         jButtonSeleziona.setText("Seleziona");
+        jButtonSeleziona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSelezionaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,8 +222,32 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificaActionPerformed
-       automa.next(new ModificaEvent());
+        automa.next(new ModificaEvent());
     }//GEN-LAST:event_jButtonModificaActionPerformed
+
+    private void jButtonConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfermaActionPerformed
+        automa.next(new ConfermaEvent());
+    }//GEN-LAST:event_jButtonConfermaActionPerformed
+
+    private void jButtonAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnullaActionPerformed
+        automa.next(new AnnullaEvent());
+    }//GEN-LAST:event_jButtonAnnullaActionPerformed
+
+    private void jButtonRimuoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRimuoviActionPerformed
+        automa.next(new RimuoviEvent());
+    }//GEN-LAST:event_jButtonRimuoviActionPerformed
+
+    private void jButtonNuovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuovaActionPerformed
+        automa.next(new AddEvent());
+    }//GEN-LAST:event_jButtonNuovaActionPerformed
+
+    private void jButtonCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCercaActionPerformed
+        automa.next(new RicercaEvent());
+    }//GEN-LAST:event_jButtonCercaActionPerformed
+
+    private void jButtonSelezionaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSelezionaActionPerformed
+        automa.next(new SelezionaEvent());
+    }//GEN-LAST:event_jButtonSelezionaActionPerformed
 
     /**
      * @param args the command line arguments
