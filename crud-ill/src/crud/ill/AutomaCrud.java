@@ -12,7 +12,11 @@ public class AutomaCrud implements State {
 
     @Override
     public void next(Event e) {
+        System.out.println("Siamo nello stato " + stato);
+        System.out.println("Ricevuto evento " + e);
         stato.next(e);
+        System.out.println("Siamo arrivati nello stato " + stato + "\n");
+
     }
 
     private class Ricerca implements State {
@@ -24,6 +28,7 @@ public class AutomaCrud implements State {
         @Override
         public void next(Event e) {
             if (e instanceof RicercaEvent) {
+                stato = new Ricerca();
             } else if (e instanceof AddEvent) {
                 stato = new Aggiungi();
             } else if (e instanceof SelezionaEvent) {
@@ -80,7 +85,7 @@ public class AutomaCrud implements State {
         public Modifica() {
             ui.entraStatoModifica();
         }
-        
+
         @Override
         public void next(Event e) {
             if (e instanceof AnnullaEvent) {
@@ -98,7 +103,7 @@ public class AutomaCrud implements State {
         public Rimuovi() {
             ui.entraStatoRimuovi();
         }
-        
+
         @Override
         public void next(Event e) {
             if (e instanceof AnnullaEvent) {
