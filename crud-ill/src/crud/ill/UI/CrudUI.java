@@ -5,17 +5,55 @@
  */
 package crud.ill.UI;
 
+import crud.ill.AutomaCrud;
+import crud.ill.Automabile;
+import crud.ill.ModificaEvent;
+
 /**
  *
  * @author Hp
  */
-public class CrudUI extends javax.swing.JFrame {
+public class CrudUI extends javax.swing.JFrame implements Automabile {
+
+    AutomaCrud automa;
+
+    @Override
+    public void entraStatoRicerca() {
+        jTextFieldCodice.setEnabled(true);
+        jTextFieldDescrizione.setEnabled(true);
+        jButtonModifica.setEnabled(true);
+        jButtonConferma.setEnabled(true);
+        jButtonAnnulla.setEnabled(true);
+        jButtonRimuovi.setEnabled(true);
+        
+    }
+
+    @Override
+    public void entraStatoAggiungi() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void entraStatoVisualizza() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void entraStatoModifica() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void entraStatoRimuovi() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     /**
      * Creates new form CrudUI
      */
     public CrudUI() {
         initComponents();
+        automa = new AutomaCrud(this);
     }
 
     /**
@@ -148,7 +186,7 @@ public class CrudUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificaActionPerformed
-        // TODO add your handling code here:
+       automa.next(new ModificaEvent());
     }//GEN-LAST:event_jButtonModificaActionPerformed
 
     /**

@@ -1,12 +1,12 @@
-
 package crud.ill;
-
 
 public class AutomaCrud implements State {
 
     private State stato;
+    private Automabile ui;
 
-    public AutomaCrud() {
+    public AutomaCrud(Automabile ui) {
+        this.ui = ui;
         stato = new Ricerca();
     }
 
