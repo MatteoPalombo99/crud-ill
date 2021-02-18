@@ -68,7 +68,9 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     @Override
     public void entraStatoModifica() {
         jTextFieldCodice.setVisible(true);
+        jTextFieldCodice.setEditable(false);
         jTextFieldDescrizione.setVisible(true);
+        jTextFieldDescrizione.setEnabled(false);
         jButtonModifica.setVisible(false);
         jButtonConferma.setVisible(true);
         jButtonAnnulla.setVisible(true);
@@ -83,7 +85,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jTextFieldCodice.setVisible(true);
         jTextFieldCodice.setEditable(false);
         jTextFieldDescrizione.setVisible(true);
-        jTextFieldDescrizione.setEditable(true);
+        jTextFieldDescrizione.setEditable(false);
         jButtonModifica.setVisible(false);
         jButtonConferma.setVisible(true);
         jButtonAnnulla.setVisible(true);
