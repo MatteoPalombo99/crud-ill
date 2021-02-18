@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package crud.ill;
 
-/**
- *
- * @author Utente
- */
+
 public class AutomaCrud implements State {
 
     private State stato;
@@ -58,6 +51,14 @@ public class AutomaCrud implements State {
             if (e instanceof SelezionaEvent) {
             } else if (e instanceof ModificaEvent) {
                 stato = new Modifica();
+            } else if (e instanceof AddEvent) {
+                stato = new Aggiungi();
+            } else if (e instanceof RicercaEvent) {
+                stato = new Ricerca();
+            } else if (e instanceof RimuoviEvent) {
+                stato = new Rimuovi();
+            } else {
+                System.out.println("Evento inaspettato.");
             }
         }
     }
@@ -66,7 +67,13 @@ public class AutomaCrud implements State {
 
         @Override
         public void next(Event e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            if (e instanceof AnnullaEvent) {
+                stato = new Visualizza();
+            } else if (e instanceof ConfermaEvent) {
+                stato = new Visualizza();
+            } else {
+                System.out.println("Evento inaspettato.");
+            }
         }
     }
 
@@ -74,7 +81,13 @@ public class AutomaCrud implements State {
 
         @Override
         public void next(Event e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            if (e instanceof AnnullaEvent) {
+                stato = new Visualizza();
+            } else if (e instanceof ConfermaEvent) {
+                stato = new Ricerca();
+            } else {
+                System.out.println("Evento inaspettato.");
+            }
         }
     }
 
