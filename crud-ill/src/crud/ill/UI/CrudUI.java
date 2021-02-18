@@ -20,9 +20,9 @@ import crud.ill.SelezionaEvent;
  * @author Hp
  */
 public class CrudUI extends javax.swing.JFrame implements Automabile {
-
+    
     AutomaCrud automa;
-
+    
     @Override
     public void entraStatoRicerca() {
         jTextFieldCodice.setVisible(false);
@@ -34,7 +34,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonNuova.setVisible(true);
         jButtonCerca.setVisible(true);
     }
-
+    
     @Override
     public void entraStatoAggiungi() {
         jTextFieldCodice.setVisible(true);
@@ -46,19 +46,30 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonCerca.setVisible(false);
         jButtonNuova.setVisible(false);
         jTableTabella.setVisible(false);
-
+        jTextFieldCercaPerCodice.setVisible(false);
     }
-
+    
     @Override
     public void entraStatoVisualizza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jButtonNuova.setVisible(true);
+        jButtonConferma.setVisible(false);
+        jButtonAnnulla.setVisible(false);
+        jButtonModifica.setVisible(true);
+        jTextFieldCodice.setVisible(true);
+        jTextFieldCodice.setEditable(false);
+        jTextFieldDescrizione.setVisible(true);
+        jTextFieldDescrizione.setEditable(false);
+        jTextFieldCodice.setVisible(true);
+        jTextFieldCercaPerCodice.setVisible(true);
+        jTableTabella.setVisible(true);
+        jButtonRimuovi.setVisible(true);
     }
-
+    
     @Override
     public void entraStatoModifica() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public void entraStatoRimuovi() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -54,6 +54,10 @@ public class AutomaCrud implements State {
 
     private class Visualizza implements State {
 
+        public Visualizza() {
+            ui.entraStatoVisualizza();
+        }
+
         @Override
         public void next(Event e) {
             if (e instanceof SelezionaEvent) {
