@@ -39,6 +39,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonSeleziona.setVisible(true);
         jButtonSeleziona.setEnabled(true);
         jTableTabella.setVisible(true);
+        jScrollPane1.setVisible(true);
 
     }
 
@@ -58,6 +59,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jTextFieldCercaPerCodice.setVisible(false);
         jButtonCerca.setVisible(false);
         jTableTabella.setVisible(false);
+        jScrollPane1.setVisible(false);
         jButtonSeleziona.setEnabled(false);
 
     }
@@ -78,6 +80,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jTextFieldCercaPerCodice.setVisible(true);
         jButtonCerca.setVisible(true);
         jTableTabella.setVisible(true);
+        jScrollPane1.setVisible(true);
         jButtonSeleziona.setVisible(true);
         jButtonSeleziona.setEnabled(true);
 
@@ -98,7 +101,8 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonCerca.setVisible(false);
         jButtonSeleziona.setVisible(true);
         jButtonSeleziona.setEnabled(false);
-        jTableTabella.setVisible(true);
+        jTableTabella.setVisible(false);
+        jScrollPane1.setVisible(false);
 
     }
 
@@ -117,7 +121,8 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonCerca.setVisible(false);
         jButtonSeleziona.setVisible(true);
         jButtonSeleziona.setEnabled(false);
-        jTableTabella.setVisible(true);
+        jTableTabella.setVisible(false);
+        jScrollPane1.setVisible(false);
 
     }
 
@@ -152,6 +157,9 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonSeleziona = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusTraversalPolicyProvider(true);
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         jTextFieldCodice.setText("Codice");
 
@@ -226,33 +234,30 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldCodice, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonModifica)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldDescrizione, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonNuova))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonModifica)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonConferma)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonAnnulla)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonRimuovi))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldCercaPerCodice, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonCerca)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonSeleziona)))
-                        .addGap(39, 39, 39)))
-                .addContainerGap())
+                        .addComponent(jButtonConferma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonAnnulla)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonRimuovi))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldCercaPerCodice, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonCerca))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jTextFieldCodice, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextFieldDescrizione, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonNuova))
+                        .addComponent(jButtonSeleziona)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(49, 75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,8 +278,9 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
                     .addComponent(jTextFieldCercaPerCodice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCerca)
                     .addComponent(jButtonSeleziona))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183))
         );
 
         pack();
